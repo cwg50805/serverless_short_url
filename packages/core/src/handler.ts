@@ -17,7 +17,9 @@ export default function handler(
       const result = await lambda(event, context);
       body = result.body;
       statusCode = result.statusCode;
-      headers = result.headers || {};
+      headers = result.headers || {
+        "Access-Control-Allow-Origin": "*",
+      };
     } catch (error) {
       statusCode = 500;
       body = JSON.stringify({

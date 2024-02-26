@@ -1,5 +1,4 @@
 import * as CryptoJS from 'crypto-js';
-import { useJsonBody } from "sst/node/api";
 import { Table } from "sst/node/table";
 import handler from "@serverless-short-url/core/handler";
 import dynamoDb from "@serverless-short-url/core/dynamodb";
