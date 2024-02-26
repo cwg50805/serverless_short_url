@@ -2,6 +2,7 @@ import * as CryptoJS from 'crypto-js';
 import { useJsonBody } from "sst/node/api";
 import { Table } from "sst/node/table";
 import handler from "@serverless-short-url/core/handler";
+import dynamoDb from "@serverless-short-url/core/dynamodb";
 
 function generateShortUrl(originalUrl: string): string {
     // Add salt (e.g., current timestamp) to the original URL
@@ -40,7 +41,10 @@ export const main = handler(async (event) => {
       },
     };
   
-    // await dynamoDb.put(params);
+    await dynamoDb.put(params);
   
-    return JSON.stringify(params.Item);
+    return {
+      body: JSON.stringify(params.Item),
+      statusCode: 200,
+    };
   });
