@@ -12,11 +12,6 @@ export function ApiStack({ stack }: StackContext) {
       },
     },
     cors: true,
-    // cors: {
-    //     allowMethods: ["ANY"],
-    //     allowHeaders: ["*"],
-    //     allowOrigins: ["*"],
-    //   },
     routes: {
       "POST /create": "packages/functions/src/create.main",
       "GET /t/{shortId}": "packages/functions/src/get.main",
