@@ -36,6 +36,9 @@ importers:
       aws-sdk:
         specifier: ^2.1565.0
         version: 2.1565.0
+      crypto-js:
+        specifier: ^4.2.0
+        version: 4.2.0
       zod:
         specifier: ^3.22.4
         version: 3.22.4

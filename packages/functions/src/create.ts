@@ -1,21 +1,7 @@
-import * as CryptoJS from 'crypto-js';
 import { Table } from "sst/node/table";
 import handler from "@serverless-short-url/core/handler";
 import dynamoDb from "@serverless-short-url/core/dynamodb";
-
-function generateShortUrl(originalUrl: string): string {
-    // Add salt (e.g., current timestamp) to the original URL
-    const salt = new Date().getTime().toString();
-    const urlWithSalt = originalUrl + salt;
-
-    // Hash the URL with salt using SHA-256
-    const hash = CryptoJS.SHA256(urlWithSalt).toString(CryptoJS.enc.Hex);
-
-    // Generate a short URL using the first 6 characters of the hash
-    const shortUrl = hash.substring(0, 16);
-
-    return shortUrl;
-}
+import generateShortUrl from "@serverless-short-url/core/hash";
 
 
 export const main = handler(async (event) => {

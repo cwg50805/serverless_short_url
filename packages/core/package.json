@@ -15,6 +15,7 @@
   "dependencies": {
     "aws-lambda": "^1.0.7",
     "aws-sdk": "^2.1565.0",
+    "crypto-js": "^4.2.0",
     "zod": "^3.22.4"
   }
 }
