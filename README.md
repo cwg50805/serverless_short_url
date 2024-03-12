@@ -6,6 +6,7 @@ A serverless URL shortener built with `sst.dev`, ready to be hosted on AWS in ju
 
 - [Prerequisite](#prerequisite)
 - [Installation](#installation)
+- [Deploy](#Deploy)
 - [Usage](#usage)
 
 ## Prerequisite
@@ -26,6 +27,12 @@ Before you begin, make sure you have the AWS CLI configured on your local machin
 ### Frontend
 1. Navigate to the `packages/frontend/` directory.
 2. Start the frontend development server with `pnpm sst dev`.
+
+## Deploy
+
+`pnpm sst deploy --stage prod`
+
+Then, it will automatically deploy to AWS service.
 
 ## Usage
 
